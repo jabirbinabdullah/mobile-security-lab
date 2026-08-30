@@ -1,0 +1,23 @@
+# Python virtual environments & bytecode
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Android SDKs & Emulators
+*.avd/
+*.img
+*.qcow2
+
+# Downloaded tools, logs, & artifacts
+tools/bin/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Proxies & sensitive traces
+*.p12
+*.der
+*.crt
+cacert.der
