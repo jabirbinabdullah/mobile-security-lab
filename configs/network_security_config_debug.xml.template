@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Template networkSecurityConfig untuk build DEBUG.
+
+    Gunakan hanya pada aplikasi yang sumbernya Anda miliki/kembangkan sendiri,
+    dan hanya untuk varian debug (jangan pernah ikut ke build release).
+    Ini mengizinkan sistem mempercayai CA yang diinstal user (misalnya CA
+    proxy Burp/mitmproxy) selain CA sistem bawaan, sehingga traffic HTTPS
+    aplikasi bisa diinspeksi selama pengujian.
+
+    Cara pakai:
+    1. Salin file ini ke res/xml/network_security_config_debug.xml pada
+       source set debug (src/debug/res/xml/).
+    2. Rujuk dari AndroidManifest.xml varian debug:
+         android:networkSecurityConfig="@xml/network_security_config_debug"
+    3. Pastikan konfigurasi ini TIDAK digunakan oleh varian release.
+-->
+<network-security-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

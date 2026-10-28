@@ -19,8 +19,12 @@ mobile-security-lab/
 ├── scripts/
 │   ├── setup_linux.sh              # Linux automated environment installer
 │   └── setup_windows.ps1           # Windows PowerShell setup script
-├── configs/                        # Tool configurations & templates
-└── snippets/                       # Common Frida scripts & hooks
+├── configs/
+│   ├── README.md
+│   └── network_security_config_debug.xml.template
+└── snippets/
+    ├── list_classes.js             # Enumerate loaded classes matching a filter
+    └── trace_method.js             # Trace args/return value of a target method
 ```
 
 ---
@@ -54,6 +58,12 @@ Run the PowerShell setup script in an elevated PowerShell session:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\scripts\setup_windows.ps1
 ```
+
+---
+
+## 📖 Guides
+- [Proxy CA Setup (Android 7+)](docs/guides/proxy_ca_setup.md) — installing a Burp/mitmproxy CA into the system trust store
+- [Frida & Objection Instrumentation](docs/guides/frida_instrumentation.md) — dynamic instrumentation workflow
 
 ---
 
